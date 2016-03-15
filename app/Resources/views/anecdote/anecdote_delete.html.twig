@@ -1,0 +1,27 @@
+{% extends 'anecdote/anecdote.html.twig' %}
+
+{% block title %}{{ parent() }} - Suppression{% endblock %}
+
+{% block body %}
+
+    <p>
+        Etes vous sûrs de vouloir supprimer l'anecdote d'ID "{{ anecdote.id }}" ?
+    </p>
+
+    <form action="{{ path('anecdote_delete', {'id': anecdote.id}) }}" method="post">
+        <a href="{{ path('anecdote_view', {'id': anecdote.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Back to anecdote
+        </a>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        {# CSRF below... #}
+        {{ form_rest(form) }}
+    </form>
+
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+
+</style>
+{% endblock %}

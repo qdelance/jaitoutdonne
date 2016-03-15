@@ -1,0 +1,83 @@
+{% extends 'anecdote/anecdote.html.twig' %}
+
+{% block title %}{{ parent() }} - List{% endblock %}
+
+{% block body %}
+
+    {% if anecdotes %}
+
+        {% include 'default/pagination.html.twig' with {'route': 'anecdote_list', 'page': page, 'nbPages': nbPages} %}
+
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>Catégorie</th>
+                    <th>Date de création</th>
+                    <th>Pseudo</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for anecdote in anecdotes %}
+                <tr>
+                    <td>
+                        <a href="{{ path('anecdote_view', {'id': anecdote.id}) }}">{{ anecdote.id }}</a>
+                    </td>
+                    <td>
+                        {{ anecdote.description|nl2br }}
+                    </td>
+                    <td>
+                        {% if anecdote.category is not null %}
+                        {{ anecdote.category.name }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if anecdote.created is not null %}
+                            {{ anecdote.created|date("m/d/Y") }}
+                        {% endif %}
+                    </td>                    
+                    <td>
+                        {% if anecdote.nickname is not null %}
+                            {{ anecdote.nickname }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if anecdote.email is not null %}
+                            {{ anecdote.email }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{{ path('anecdote_edit', {'id': anecdote.id}) }}" class="btn btn-default">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            Edit
+                        </a>
+
+                        <a href="{{ path('anecdote_delete', {'id': anecdote.id}) }}" class="btn btn-danger">
+                            <i class="glyphicon glyphicon-trash"></i>
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {% include 'default/pagination.html.twig' with {'route': 'anecdote_list', 'page': page, 'nbPages': nbPages} %}
+
+    {% else %}
+
+        <p>Aucune anecdote</p>
+
+    {% endif %}
+
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+
+</style>
+{% endblock %}

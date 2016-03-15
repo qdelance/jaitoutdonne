@@ -1,0 +1,61 @@
+{% extends 'anecdote/anecdote.html.twig' %}
+
+{% block title %}{{ parent() }} - Consultation{% endblock %}
+
+{% block body %}
+
+    {% if anecdote %}
+        <h2>Anecdote View</h2>
+
+        <p><strong>Id: </strong>{{ anecdote.id }}</p>
+
+        {% if anecdote.category is not null %}
+        <p><strong>Categorie : </strong>{{ anecdote.category.name }}</p>
+        {%  endif %}
+
+        <p><strong>Description : </strong><br>
+            {{ anecdote.description }}
+        </p>
+
+        <p><strong>Pseudo : </strong><br>
+            {{ anecdote.nickname }}
+        </p>
+
+        <p><strong>Email : </strong><br>
+            {{ anecdote.email }}
+        </p>
+
+        <p><strong>Date de création: </strong><br>
+            {{ anecdote.created|date("m/d/Y") }}
+        </p>
+
+        <p>
+            <a href="{{ path('anecdote_list') }}" class="btn btn-default">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Retour
+            </a>
+
+            <a href="{{ path('anecdote_edit', {'id': anecdote.id}) }}" class="btn btn-default">
+                <i class="glyphicon glyphicon-edit"></i>
+                Editer
+            </a>
+
+            <a href="{{ path('anecdote_delete', {'id': anecdote.id}) }}" class="btn btn-danger">
+                <i class="glyphicon glyphicon-trash"></i>
+                Supprimer
+            </a>
+        </p>
+
+    {% else %}
+
+        <p>Aucune anecdote</p>
+
+    {% endif %}
+
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+
+</style>
+{% endblock %}

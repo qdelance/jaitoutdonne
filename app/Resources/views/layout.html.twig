@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block htitle %}J'ai tout donné !{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+
+    <div class="container">
+
+        <div class="row">
+            <div id="menu" class="col-md-3">
+                <h3>Navigation</h3>
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="{{ path('anecdote_list') }}">Anecdotes</a></li>
+                    <li><a href="{{ path('anecdote_add') }}">Add Anecdote</a></li>
+                    <li><a href="{{ path('core_contact') }}">Contact Us</a></li>
+                </ul>
+
+            </div>
+            <div id="content" class="col-md-9">
+
+                <h1>{% block title %}{% endblock %}</h1>
+
+                {# Global display of flash messages to avoid doing it in every template #}
+                {% for flashMessage in app.session.flashbag.get('error') %}
+                    <div class="alert alert-danger">
+                        {{ flashMessage }}
+                    </div>
+                {% endfor %}
+                {% for flashMessage in app.session.flashbag.get('warning') %}
+                    <div class="alert alert-warning">
+                        {{ flashMessage }}
+                    </div>
+                {% endfor %}
+                {% for flashMessage in app.session.flashbag.get('success') %}
+                    <div class="alert alert-success">
+                        {{ flashMessage }}
+                    </div>
+                {% endfor %}
+                {% for flashMessage in app.session.flashbag.get('info') %}
+                    <div class="alert alert-info">
+                        {{ flashMessage }}
+                    </div>
+                {% endfor %}
+                <!-- end flash -->
+
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>Propulsé par <a href="https://symfony.com/">Symfony</a> - {{ 'now'|date('Y') }}.</p>
+        </footer>
+
+    </div>
+
+    {% block javascripts %}{% endblock %}
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    </body>
+</html>

@@ -1,0 +1,29 @@
+{% if nbPages > 1 %}
+    <ul class="pagination">
+        {% if nbPages < 10 %}
+            {% for p in range(1, nbPages) %}
+                <li{% if p == page %} class="active"{% endif %}>
+                    <a href="{{ path(route, app.request.query.all|merge({'page': p})) }}">{{ p }}</a>
+                </li>
+            {% endfor %}
+        {% else %}
+            {% if page > 1 %}
+                <li><a href="{{ path(route, app.request.query.all|merge({'page': 1})) }}">First</a></li>
+            {% endif %}
+            {% if page > 2 %}
+                <li><a href="{{ path(route, app.request.query.all|merge({'page': page - 1})) }}">Previous</a></li>
+            {% endif %}
+            {# ... 36 | 37 | 38 | 39 (active) | 40 | 41 | 42 ... #}
+            {% for p in range(max(page - 3, 1), min(page + 3, nbPages)) %}
+                <li{% if p == page %} class="active"{% endif %}>
+                    <a href="{{ path(route, app.request.query.all|merge({'page': p})) }}">{{ p }}</a></li>
+            {% endfor %}
+            {% if page < (nbPages - 1)%}
+                <li><a href="{{ path(route, app.request.query.all|merge({'page': page + 1})) }}">Next</a></li>
+            {% endif %}
+            {% if page < nbPages %}
+                <li><a href="{{ path(route, app.request.query.all|merge({'page': nbPages})) }}">Last</a></li>
+            {% endif %}
+        {% endif %}
+    </ul>
+{% endif %}
