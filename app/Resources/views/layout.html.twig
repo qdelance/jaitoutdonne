@@ -15,19 +15,20 @@
     </head>
     <body>
 
-    <div class="container">
+    <div class="container-fluid">
 
         <div class="row">
-            <div id="menu" class="col-md-3">
+            <div id="menu" class="col-md-2">
                 <h3>Navigation</h3>
                 <ul class="nav nav-pills nav-stacked">
+                    <li><a href="{{ path('homepage') }}">Accueil</a></li>
                     <li><a href="{{ path('anecdote_list') }}">Anecdotes</a></li>
                     <li><a href="{{ path('anecdote_add') }}">Ajouter une anecdote</a></li>
                     <li><a href="{{ path('core_contact') }}">Nous contacter</a></li>
                 </ul>
 
             </div>
-            <div id="content" class="col-md-9">
+            <div id="content" class="col-md-10">
 
                 <h1>{% block title %}{% endblock %}</h1>
 
