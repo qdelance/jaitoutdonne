@@ -1,8 +1,8 @@
-{% extends 'anecdote/anecdote.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block title %}{{ parent() }} - Suppression{% endblock %}
+{% block content %}
 
-{% block body %}
+    <h1>{{ 'anecdote.title.delete'|trans }}</h1>
 
     <p>
         Etes vous sûrs de vouloir supprimer l'anecdote d'ID "{{ anecdote.id }}" ?

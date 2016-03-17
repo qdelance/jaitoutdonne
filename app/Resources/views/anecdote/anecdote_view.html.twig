@@ -1,12 +1,10 @@
-{% extends 'anecdote/anecdote.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block title %}{{ parent() }} - Consultation{% endblock %}
+{% block content %}
 
-{% block body %}
+    <h1>{{ 'anecdote.title.view'|trans }}</h1>
 
     {% if anecdote %}
-        <h2>Anecdote View</h2>
-
         <p><strong>Id: </strong>{{ anecdote.id }}</p>
 
         {% if anecdote.category is not null %}

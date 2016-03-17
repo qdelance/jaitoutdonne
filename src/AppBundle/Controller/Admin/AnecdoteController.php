@@ -23,7 +23,7 @@ class AnecdoteController extends Controller
 {
     /**
      * @Route("/", name="anecdote_list", defaults={"page" = 1})
-     * @Route("/anecdotes/{page}", defaults={"page" = 1}, name="anecdote_list", requirements={"page": "\d+" })
+     * @Route("/anecdotes/{page}", defaults={"page" = 1}, name="anecdote_list_paginated", requirements={"page": "\d+" })
      * @Method("GET")
      */
     public function anecdotesAction(Request $request, $page)

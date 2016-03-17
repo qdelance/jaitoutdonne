@@ -1,0 +1,18 @@
+title.login: 'Login Page'
+label.username: Username
+label.password: Password
+action.sign_in: 'Sign In'
+help.login_users: 'Try either of the following users'
+label.role: Role
+help.role_user: 'regular user'
+help.role_admin: administrator
+note: Note
+help.reload_fixtures: 'If these users don''t work, reload application fixtures by running this command from the terminal:'
+tip: Tip
+help.add_user: 'If you want to create new users, run this other command:'
+footer.power_by: 'Powered by'
+site.title: 'I have given you all!'
+anecdote.title.edit: 'Anecdote Edit'
+anecdote.title.delete: 'Anecdote Delete'
+anecdote.title.view: 'Anecdote View'
+anecdote.title.list: 'Anecdote List'

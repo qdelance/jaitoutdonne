@@ -1,8 +1,8 @@
-{% extends 'anecdote/anecdote.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block title %}{{ parent() }} - List{% endblock %}
+{% block content %}
 
-{% block body %}
+    <h1>{{ 'anecdote.title.list'|trans }}</h1>
 
     {% if anecdotes %}
 

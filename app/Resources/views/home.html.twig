@@ -1,57 +1,28 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block htitle %}J'ai tout donné !{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+{% extends 'base.html.twig' %}
 
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+{% block body %}
 
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <div class="row">
+        <div id="content" class="col-md-12">
 
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
+            <h1>{% block title %}... bref, j'ai tout donné !{% endblock %}</h1>
 
-    <div class="container">
-
-        <div class="row">
-            <div id="content" class="col-md-12">
-
-                <h1>{% block title %}... bref, j'ai tout donné !{% endblock %}</h1>
-
-                {% for anecdote in anecdotes %}
-                    <div class="panel panel-default">
-                        {% if anecdote.category is not null %}
-                            <div class="panel-heading">{{ anecdote.category.name }}</div>
-                        {% endif %}
-                        <div class="panel-body">
-                            {{ anecdote.description|nl2br }}
-                        </div>
-                        <div class="panel-footer">{% if anecdote.nickname is not null %}{{ anecdote.nickname }}{% else %}Anonymous{% endif %} le {{ anecdote.created|date("m/d/Y") }}</div>
+            {% for anecdote in anecdotes %}
+                <div class="panel panel-default">
+                    {% if anecdote.category is not null %}
+                        <div class="panel-heading">{{ anecdote.category.name }}</div>
+                    {% endif %}
+                    <div class="panel-body">
+                        {{ anecdote.description|nl2br }}
                     </div>
-                {% else %}
-                    Aucune anecdote
-                {% endfor %}
+                    <div class="panel-footer">{% if anecdote.nickname is not null %}{{ anecdote.nickname }}{% else %}Anonymous{% endif %} le {{ anecdote.created|date("m/d/Y") }}</div>
+                </div>
+            {% else %}
+                Aucune anecdote
+            {% endfor %}
 
 
-            </div>
         </div>
-
-        <hr>
-
-        <footer>
-            <p>Propulsé par <a href="https://symfony.com/">Symfony</a> - {{ 'now'|date('Y') }}.</p>
-        </footer>
-
     </div>
 
-    {% block javascripts %}{% endblock %}
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-    </body>
-</html>
+{% endblock %}
