@@ -72,7 +72,7 @@ class LoadFixtures extends AbstractFixture implements FixtureInterface, Containe
         $manager->flush();
 
 
-        $cat1 = new Category();
+        /*$cat1 = new Category();
         $cat1->setName('cat-test');
         for ($i = 0 ; $i < 1000 ; $i++) {
             $anecdote = new Anecdote();
@@ -80,7 +80,7 @@ class LoadFixtures extends AbstractFixture implements FixtureInterface, Containe
             $anecdote->setCategory($cat1);
             $manager->persist($anecdote);
         }
-        $manager->flush();
+        $manager->flush();*/
     }
 
 }
