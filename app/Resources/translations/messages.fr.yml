@@ -10,7 +10,7 @@ note: Remarque
 help.reload_fixtures: 'Si ces utilisateurs ne marchent pas, recharger les données de l''application en exécutant cette commande depuis un terminal :'
 tip: Astuce
 help.add_user: 'Si vous voulez créer de nouveaux utilisateurs, exécuter cette commande :'
-footer.power_by: __footer.power_by
+footer.power_by: 'Propulsé par'
 site.title: 'J''ai tout donné !'
 anecdote.title.edit: 'Edition d''une anecdote'
 anecdote.title.delete: 'Suppression d''une anecdote'
