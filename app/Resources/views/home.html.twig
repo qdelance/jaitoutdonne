@@ -5,8 +5,6 @@
     <div class="row">
         <div id="content" class="col-md-12">
 
-            <h1>{% block title %}... bref, j'ai tout donné !{% endblock %}</h1>
-
             {% for anecdote in anecdotes %}
                 <div class="panel panel-default">
                     {% if anecdote.category is not null %}

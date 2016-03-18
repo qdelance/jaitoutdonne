@@ -6,6 +6,7 @@ use AppBundle\Entity\Anecdote;
 use AppBundle\Form\AnecdoteType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -16,6 +17,8 @@ define('NB_PER_PAGE', 25);
 /**
  * Class AnecdoteController
  * @Route("/admin")
+ * @Security("has_role('ROLE_ADMIN')")
+ *
  * @package AppBundle\Controller
  */
 

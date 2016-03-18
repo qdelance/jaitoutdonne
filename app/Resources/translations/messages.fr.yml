@@ -2,17 +2,12 @@ title.login: 'Page de connexion'
 label.username: 'Nom d''utilisateur'
 label.password: 'Mot de passe'
 action.sign_in: 'Se connecter'
-help.login_users: 'Essayer l''un de ces utilisateurs'
-label.role: Rôle
-help.role_user: 'utilisateur de base'
-help.role_admin: administrateur
-note: Remarque
-help.reload_fixtures: 'Si ces utilisateurs ne marchent pas, recharger les données de l''application en exécutant cette commande depuis un terminal :'
-tip: Astuce
-help.add_user: 'Si vous voulez créer de nouveaux utilisateurs, exécuter cette commande :'
 footer.power_by: 'Propulsé par'
 site.title: 'J''ai tout donné !'
 anecdote.title.edit: 'Edition d''une anecdote'
 anecdote.title.delete: 'Suppression d''une anecdote'
 anecdote.title.view: 'Consultation d''une anecdote'
 anecdote.title.list: 'Liste des anecdotes'
+home: Accueil
+action.login: 'Se connecter'
+action.logout: 'Se déconnecter'
