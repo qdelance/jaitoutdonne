@@ -12,13 +12,13 @@
 
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Description</th>
-                    <th>Catégorie</th>
-                    <th>Date de création</th>
-                    <th>Pseudo</th>
-                    <th>Email</th>
-                    <th>Actions</th>
+                    <th>{{ 'label.id'|trans }}</th>
+                    <th>{{ 'label.description'|trans }}</th>
+                    <th>{{ 'label.category'|trans }}</th>
+                    <th>{{ 'label.created'|trans }}</th>
+                    <th>{{ 'label.nickname'|trans }}</th>
+                    <th>{{ 'label.email'|trans }}</th>
+                    <th>{{ 'label.actions'|trans }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,12 +53,12 @@
                     <td>
                         <a href="{{ path('anecdote_edit', {'id': anecdote.id}) }}" class="btn btn-default">
                             <i class="glyphicon glyphicon-edit"></i>
-                            Edit
+                            {{ 'action.edit'|trans }}
                         </a>
 
                         <a href="{{ path('anecdote_delete', {'id': anecdote.id}) }}" class="btn btn-danger">
                             <i class="glyphicon glyphicon-trash"></i>
-                            Delete
+                            {{ 'action.delete'|trans }}
                         </a>
                     </td>
                 </tr>

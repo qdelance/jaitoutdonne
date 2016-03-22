@@ -11,3 +11,17 @@ anecdote.title.list: 'Anecdote List'
 home: Home
 action.login: Login
 action.logout: Logout
+label.id: ID
+label.description: Description
+label.category: Category
+label.created: Created
+label.nickname: Nickname
+label.email: Email
+label.actions: Actions
+navigation: Navigation
+anecdotes: Anecdotes
+action.anecdote.add: Add Anecdote
+contact_us: Contact Us
+action.edit: Edit
+action.delete: Delete
+

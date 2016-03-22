@@ -11,3 +11,16 @@ anecdote.title.list: 'Liste des anecdotes'
 home: Accueil
 action.login: 'Se connecter'
 action.logout: 'Se déconnecter'
+label.id: ID
+label.description: Description
+label.category: Catégorie
+label.created: 'Date de création'
+label.nickname: Pseudo
+label.email: Email
+label.actions: Actions
+navigation: Navigation
+anecdotes: Anecdotes
+action.anecdote.add: Ajouter une anecdote
+contact_us: Nous contacter
+action.edit: Editer
+action.delete: Supprimer

@@ -4,12 +4,12 @@
 
     <div class="row">
         <div id="menu" class="col-md-2">
-            <h3>Navigation</h3>
+            <h3>{{ 'navigation'|trans }}</h3>
             <ul class="nav nav-pills nav-stacked">
-                <li><a href="{{ path('homepage') }}">Accueil</a></li>
-                <li><a href="{{ path('anecdote_list') }}">Anecdotes</a></li>
-                <li><a href="{{ path('anecdote_add') }}">Ajouter une anecdote</a></li>
-                <li><a href="{{ path('core_contact') }}">Nous contacter</a></li>
+                <li><a href="{{ path('homepage') }}">{{ 'home'|trans }}</a></li>
+                <li><a href="{{ path('anecdote_list') }}">{{ 'anecdotes'|trans }}</a></li>
+                <li><a href="{{ path('anecdote_add') }}">{{ 'action.anecdote.add'|trans }}</a></li>
+                <li><a href="{{ path('core_contact') }}">{{ 'contact_us'|trans }}</a></li>
             </ul>
 
         </div>
