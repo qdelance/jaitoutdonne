@@ -20,7 +20,10 @@ label.email: Email
 label.actions: Actions
 navigation: Navigation
 anecdotes: Anecdotes
-action.anecdote.add: Ajouter une anecdote
-contact_us: Nous contacter
+action.anecdote.add: 'Ajouter une anecdote'
+contact_us: 'Nous contacter'
 action.edit: Editer
 action.delete: Supprimer
+site.logged_in_as: 'Connecté en tant que'
+site.link1: __site.link1
+site.link2: __site.link2
