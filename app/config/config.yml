@@ -72,3 +72,8 @@ stof_doctrine_extensions:
         default:
             timestampable: true
             sluggable: true
+
+# to use bootstrap markup
+knp_paginator:
+    template:
+         pagination: default/paginator-bootstrap.html.twig

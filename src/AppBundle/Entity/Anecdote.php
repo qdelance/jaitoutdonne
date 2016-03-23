@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -40,6 +41,9 @@ class Anecdote
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, nullable=true)
+     * @Assert\Email(
+     *     message = "invalidEmail"
+     * )
      */
     private $email;
 

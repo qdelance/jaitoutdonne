@@ -28,4 +28,6 @@ site.logged_in_as: 'Connecté en tant que'
 site.link1: __site.link1
 site.link2: __site.link2
 categories: Catégories
-no_category: Aucune catégorie
+no_category: 'Aucune catégorie'
+site.link3: __site.link3
+action.save: Sauver

@@ -37,4 +37,13 @@ class AnecdoteRepository extends \Doctrine\ORM\EntityRepository
 
         return new Paginator($qb->getQuery(), true);
     }
+
+    public function queryLatest()
+    {
+        return $this->createQueryBuilder('a')
+          ->join('a.category', 'c')
+          ->addSelect('c')
+          ->orderBy('a.id', 'ASC')
+          ->getQuery();
+    }
 }

@@ -43,6 +43,7 @@ class AnecdoteController extends Controller
     }
 
     /**
+     * used by render(controller())
      */
     public function categoriesAction()
     {
@@ -50,10 +51,7 @@ class AnecdoteController extends Controller
           ->getDoctrine()
           ->getRepository('AppBundle:Category');
 
-        // $categories = $repository->findBy(array(), array('name' => 'ASC'));
         $categories = $repository->getAll();
-
-        dump($categories);
 
         return $this->render(
           'categories.html.twig',

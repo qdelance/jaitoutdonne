@@ -6,8 +6,6 @@
 
     {% if anecdotes %}
 
-        {% include 'default/pagination.html.twig' with {'route': 'anecdote_list_paginated', 'page': page, 'nbPages': nbPages} %}
-
         <table class="table">
 
             <thead>
@@ -66,7 +64,9 @@
             </tbody>
         </table>
 
-        {% include 'default/pagination.html.twig' with {'route': 'anecdote_list_paginated', 'page': page, 'nbPages': nbPages} %}
+        <div class="navigation text-center">
+            {{ knp_pagination_render(anecdotes) }}
+        </div>
 
     {% else %}
 

@@ -23,14 +23,12 @@ class AnecdoteType extends AbstractType
             null,
             array(
               'attr' => array('autofocus' => true),
-              'label' => 'label.description',
             )
           )
           ->add(
             'category',
             EntityType::class,
             array(
-              'label' => 'label.category',
               'class' => 'AppBundle:Category',
               'choice_label' => 'name',
               'multiple' => false,
@@ -39,17 +37,17 @@ class AnecdoteType extends AbstractType
           ->add(
             'nickname',
             TextType::class,
-            array('label' => 'label.nickname')
+            array('required' => false)
           )
           ->add(
             'email',
             TextType::class,
-            array('label' => 'label.email')
+            array('required' => false)
           )
           ->add(
             'save',
             SubmitType::class,
-            array('label' => 'action.save')
+            array()
           );
     }
 

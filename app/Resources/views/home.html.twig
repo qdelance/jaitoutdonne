@@ -8,7 +8,19 @@
             {% for anecdote in anecdotes %}
                 <div class="panel panel-default">
                     {% if anecdote.category is not null %}
-                        <div class="panel-heading">{{ anecdote.category.name }}</div>
+                        <div class="panel-heading">
+                            {{ anecdote.category.name }}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="pull-right btn btn-xs btn-default" href="{{ path('anecdote_edit', {id: anecdote.id}) }}">
+                                    <i class="glyphicon glyphicon-edit"></i>
+                                    {{ 'action.edit'|trans }}
+                                </a>
+                                <a class="pull-right btn btn-xs btn-danger" href="{{ path('anecdote_delete', {id: anecdote.id}) }}">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                    {{ 'action.delete'|trans }}
+                                </a>
+                            {% endif %}
+                        </div>
                     {% endif %}
                     <div class="panel-body">
                         {{ anecdote.description|nl2br }}

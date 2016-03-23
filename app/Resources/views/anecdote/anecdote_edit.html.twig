@@ -6,9 +6,50 @@
 
     <div class="well">
 
-    {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+    {% form_theme form 'bootstrap_3_layout.html.twig' %}
 
-    {{ form(form) }}
+
+        {{ form_start(form) }}
+
+        {{ form_errors(form) }}
+
+        <div class="form-group">
+            {{ form_label(form.description, 'label.description'|trans) }}
+
+            {{ form_errors(form.description) }}
+
+            {{ form_widget(form.description) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.category, 'label.category'|trans) }}
+
+            {{ form_errors(form.category) }}
+
+            {{ form_widget(form.category) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.nickname, 'label.nickname'|trans) }}
+
+            {{ form_errors(form.nickname) }}
+
+            {{ form_widget(form.nickname) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.email, 'label.email'|trans) }}
+
+            {{ form_errors(form.email) }}
+
+            {{ form_widget(form.email) }}
+        </div>
+
+        {{ form_widget(form.save, { 'label': 'action.save'|trans }) }}
+
+        {{ form_rest(form) }}
+
+        {{ form_end(form) }}
 
     </div>
 

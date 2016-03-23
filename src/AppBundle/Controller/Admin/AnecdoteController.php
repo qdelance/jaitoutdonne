@@ -35,13 +35,15 @@ class AnecdoteController extends Controller
           ->getDoctrine()
           ->getRepository('AppBundle:Anecdote');
 
-        $anecdotes = $repository->getAll(array(), $page, NB_PER_PAGE);
+        $query = $repository->queryLatest();
 
-        $nbPages = ceil(count($anecdotes) / NB_PER_PAGE);
+        $paginator = $this->get('knp_paginator');
+        $anecdotes = $paginator->paginate($query, $page, NB_PER_PAGE);
+        $anecdotes->setUsedRoute('anecdote_list_paginated');
 
         return $this->render(
           'anecdote/anecdote_list.html.twig',
-          array('anecdotes' => $anecdotes, 'page' => $page, 'nbPages' => $nbPages)
+          array('anecdotes' => $anecdotes)
         );
     }
 
