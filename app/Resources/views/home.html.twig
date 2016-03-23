@@ -23,7 +23,7 @@
                         </div>
                     {% endif %}
                     <div class="panel-body">
-                        {{ anecdote.description|nl2br }}
+                        {{ anecdote.description|md2html|nl2br }}
                     </div>
                     <div class="panel-footer">{% if anecdote.nickname is not null %}{{ anecdote.nickname }}{% else %}Anonymous{% endif %} le {{ anecdote.created|date("m/d/Y") }}</div>
                 </div>

@@ -29,7 +29,9 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "gedmo/doctrine-extensions": "^2.4",
         "stof/doctrine-extensions-bundle": "^1.2",
-        "knplabs/knp-paginator-bundle": "^2.5"
+        "knplabs/knp-paginator-bundle": "^2.5",
+        "erusev/parsedown": "^1.6",
+        "ezyang/htmlpurifier": "^4.7"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

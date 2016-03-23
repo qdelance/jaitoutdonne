@@ -4,6 +4,12 @@ parameters:
 #    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    markdown:
+        class: AppBundle\Utils\Markdown
+
+    markdown.twig.app_extension:
+        public:    false
+        class:     AppBundle\Twig\MarkdownExtension
+        arguments: ["@markdown", "%locale%"]
+        tags:
+            - { name: twig.extension }
