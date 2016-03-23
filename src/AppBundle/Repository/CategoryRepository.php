@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use Doctrine\ORM\Query\ResultSetMapping;
+
 /**
  * CategoryRepository
  *
@@ -10,4 +12,37 @@ namespace AppBundle\Repository;
  */
 class CategoryRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getAll()
+    {
+        $qb = $this->createQueryBuilder('c')
+          ->join('c.anecdotes', 'a')
+          ->addSelect('a')
+          ->orderBy('c.name', 'ASC');
+
+        return $qb->getQuery()->getResult();
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

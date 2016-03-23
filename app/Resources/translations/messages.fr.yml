@@ -27,3 +27,5 @@ action.delete: Supprimer
 site.logged_in_as: 'Connecté en tant que'
 site.link1: __site.link1
 site.link2: __site.link2
+categories: Catégories
+no_category: Aucune catégorie

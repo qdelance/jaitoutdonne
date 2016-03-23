@@ -67,7 +67,7 @@ class Anecdote
     private $published = false;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category", inversedBy="anecdotes", cascade={"persist"})
      */
     private $category;
 

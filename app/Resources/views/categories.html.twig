@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">{{ 'categories'|trans }}</div>
+
+    {% if categories|length > 0 %}
+
+    <ul class="list-group">
+        {% for category in categories %}
+        <li class="list-group-item"><a href="{{ path('by_category', {slug: category.slug}) }}">{{ category.name }}</a> ({{ category.anecdotes|length }}) </li>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+        {{ 'no_category'|trans }}
+    {% endif %}
+
+</div>

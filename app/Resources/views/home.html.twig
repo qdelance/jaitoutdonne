@@ -3,7 +3,7 @@
 {% block body %}
 
     <div class="row">
-        <div id="content" class="col-md-12">
+        <div id="content" class="col-md-9">
 
             {% for anecdote in anecdotes %}
                 <div class="panel panel-default">
@@ -19,6 +19,11 @@
                 Aucune anecdote
             {% endfor %}
 
+        </div>
+
+        <div id="content" class="col-md-3">
+
+            {{ render(controller('AppBundle:Anecdote:categories')) }}
 
         </div>
     </div>

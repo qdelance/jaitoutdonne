@@ -15,27 +15,21 @@ class AnecdoteRepository extends \Doctrine\ORM\EntityRepository
     public function getAll($filters, $page, $nbPerPage)
     {
         $qb = $this->createQueryBuilder('a')
-          ->join('a.category', 'category')
-          ->addSelect('category')
+          ->join('a.category', 'c')
+          ->addSelect('c')
           ->orderBy('a.id', 'ASC');
 
         // TODO: Add search form
-        /*if ($filters != null) {
-            if (array_key_exists('title', $filters) && $filters['title'] != '') {
-                $qb->andWhere('m.title like :title')
-                  ->setParameter('title', '%'.$filters['title'].'%');
+        if ($filters != null) {
+            if (array_key_exists(
+                'category',
+                $filters
+              ) && $filters['category'] != ''
+            ) {
+                $qb->andWhere('c.slug like :category')
+                  ->setParameter('category', '%'.$filters['category'].'%');
             }
-
-            if (array_key_exists('genre', $filters) && $filters['genre'] !== '' && $filters['genre'] !== null) {
-                $qb->andWhere('m.genre = :genre')
-                  ->setParameter('genre', $filters['genre']);
-            }
-
-            if (array_key_exists('type', $filters) && $filters['type'] !== '' && $filters['type'] !== null) {
-                $qb->andWhere('m.type = :type')
-                  ->setParameter('type', $filters['type']);
-            }
-        }*/
+        }
 
         // LIMIT and OFFSET management => pagination
         $qb->setFirstResult(($page - 1) * $nbPerPage)

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -37,6 +38,16 @@ class Category
      * @Gedmo\Slug(fields={"name"})
      */
     private $slug;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Anecdote", mappedBy="category")
+     */
+    private $anecdotes;
+
+    public function __construct()
+    {
+        $this->anecdotes = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -94,5 +105,39 @@ class Category
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Add anecdote
+     *
+     * @param \AppBundle\Entity\Anecdote $anecdote
+     *
+     * @return Category
+     */
+    public function addAnecdote(\AppBundle\Entity\Anecdote $anecdote)
+    {
+        $this->anecdotes[] = $anecdote;
+
+        return $this;
+    }
+
+    /**
+     * Remove anecdote
+     *
+     * @param \AppBundle\Entity\Anecdote $anecdote
+     */
+    public function removeAnecdote(\AppBundle\Entity\Anecdote $anecdote)
+    {
+        $this->anecdotes->removeElement($anecdote);
+    }
+
+    /**
+     * Get anecdotes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAnecdotes()
+    {
+        return $this->anecdotes;
     }
 }
