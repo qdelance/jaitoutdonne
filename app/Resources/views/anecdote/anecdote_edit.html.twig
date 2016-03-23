@@ -19,6 +19,10 @@
             {{ form_errors(form.description) }}
 
             {{ form_widget(form.description) }}
+
+            <small class="text-muted">
+            {{ 'help.markdown'|trans|raw }}
+            </small>
         </div>
 
         <div class="form-group">

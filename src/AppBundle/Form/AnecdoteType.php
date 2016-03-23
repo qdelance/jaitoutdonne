@@ -22,7 +22,7 @@ class AnecdoteType extends AbstractType
             'description',
             null,
             array(
-              'attr' => array('autofocus' => true),
+              'attr' => array('autofocus' => true, 'rows' => 5),
             )
           )
           ->add(

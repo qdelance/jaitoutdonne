@@ -25,9 +25,9 @@ contact_us: 'Nous contacter'
 action.edit: Editer
 action.delete: Supprimer
 site.logged_in_as: 'Connecté en tant que'
-site.link1: __site.link1
-site.link2: __site.link2
 categories: Catégories
 no_category: 'Aucune catégorie'
-site.link3: __site.link3
 action.save: Sauver
+help.markdown: >
+  Ce champ peut être formaté grâce à <a href="https://fr.wikipedia.org/wiki/Markdown">Markdown</a>.
+  La librairie PHP <a href="http://parsedown.org/demo">ParseDown</a> est utilisée pour cela.
