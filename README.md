@@ -14,6 +14,7 @@ Symfony app is supposed to be clone in /var/www/<sf_app>
 
 Ensure php-fpm package is installed.
 Use either a TCP/IP socket or UNIX socket (listen key in default pool www.conf), this will impact web server configuration.
+Note that conf with Apache is way simpler with TCP/IP socket.
 
 # Web server configuration
 
@@ -21,7 +22,8 @@ Use either a TCP/IP socket or UNIX socket (listen key in default pool www.conf),
 
 Refer to http://symfony.com/doc/current/cookbook/configuration/web_server_configuration.html#using-mod-proxy-fcgi-with-apache-2-4
 
-Ensure mod_rewrite is enabled.
+Enable module proxy_fastcgi (to communicate with PHP-FPM).
+Ensure module rewrite is enabled (to get clean URLs).
 
 ## NGinx
    
