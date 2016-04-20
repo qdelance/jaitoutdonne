@@ -3,9 +3,31 @@ jaitoutdonne
 
 A simple VDM clone :)
 
-Add vhost:
-    
-    TODO
+# Requirements
+  * PHP, FPM suggested
+  * Apache or NGinx
+  * MySQL/MariaDB
+
+Symfony app is supposed to be clone in /var/www/<sf_app>
+
+# PHP configuration
+
+Ensure php-fpm package is installed.
+Use either a TCP/IP socket or UNIX socket (listen key in default pool www.conf), this will impact web server configuration.
+
+# Web server configuration
+
+## Apache
+
+Refer to http://symfony.com/doc/current/cookbook/configuration/web_server_configuration.html#using-mod-proxy-fcgi-with-apache-2-4
+
+Ensure mod_rewrite is enabled.
+
+## NGinx
+   
+Refer to http://symfony.com/doc/current/cookbook/configuration/web_server_configuration.html#nginx
+
+# Symfony application   
     
 Change rights: https://symfony.com/doc/current/book/installation.html#book-installation-permissions
 
@@ -27,4 +49,4 @@ Load fixtures (init data in DB) :
 There are admin/password and user/password users ready to use.
 To create new users:
 
-    $ (TODO, copy from demo) ./bin/console XXX:add-user
+    $ ./bin/console app:add-user
