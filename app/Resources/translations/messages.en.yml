@@ -28,6 +28,5 @@ site.logged_in_as: 'Connected as'
 categories: Categories
 no_category: 'No category'
 action.save: Save
-help.markdown: >
-  This field can be formatted using <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>.
-  <a href="http://parsedown.org/demo">ParseDown</a> PHP library is used.
+help.markdown: 'This field can be formatted using <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>. <a href="http://parsedown.org/demo">ParseDown</a> PHP library is used.'
+help.description: 'Anecdote must end with "I have given you all!"'

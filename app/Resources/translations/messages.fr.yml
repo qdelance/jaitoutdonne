@@ -28,6 +28,5 @@ site.logged_in_as: 'Connecté en tant que'
 categories: Catégories
 no_category: 'Aucune catégorie'
 action.save: Sauver
-help.markdown: >
-  Ce champ peut être formaté grâce à <a href="https://fr.wikipedia.org/wiki/Markdown">Markdown</a>.
-  La librairie PHP <a href="http://parsedown.org/demo">ParseDown</a> est utilisée pour cela.
+help.markdown: 'Ce champ peut être formaté grâce à <a href="https://fr.wikipedia.org/wiki/Markdown"">Markdown</a>. La librairie PHP <a href="http://parsedown.org/demo">ParseDown</a> est utilisée pour cela.'
+help.description: 'L''anecdote doit se terminer par "Bref XXX a tout donné"'

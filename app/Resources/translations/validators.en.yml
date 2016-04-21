@@ -1,1 +1,2 @@
 invalidEmail: The email '{{ value }}' is not a valid email.
+constraint.anecdote.description.error: Invalid description, make sure it ends up with magic sentence (regexp = %regexp%).

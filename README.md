@@ -52,3 +52,14 @@ There are admin/password and user/password users ready to use.
 To create new users:
 
     $ ./bin/console app:add-user
+    
+# Important: locale configuration
+
+Application is provided in both FR et EN.
+Translation messages are provided, default locale must be specified in config.yml
+
+BUT
+
+Make sure that the correct validation regexp is consistent in services.yml
+
+That's to say, with fr locale, anecdote description must end with "bref, ... tout donné !"

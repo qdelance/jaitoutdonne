@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use AppBundle\Validator\Constraints as CustomConstraints;
 
 /**
  * Anecdote
@@ -24,7 +25,7 @@ class Anecdote
     private $id;
 
     /**
-     * @var string
+     * @CustomConstraints\AnecdoteDescription
      *
      * @ORM\Column(name="description", type="text")
      */

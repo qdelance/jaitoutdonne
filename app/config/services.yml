@@ -3,6 +3,13 @@
 parameters:
 #    parameter_name: value
 
+# Must be consistent with the language of the installation
+# Regexp must be useable by preg_match
+# FR
+    anecdote_description_regexp: '/[bB]ref, .* tout donné.*$/'
+# EN
+#     anecdote_description_regexp: '/I have given you all!$/'
+
 services:
     markdown:
         class: AppBundle\Utils\Markdown
@@ -13,3 +20,9 @@ services:
         arguments: ["@markdown", "%locale%"]
         tags:
             - { name: twig.extension }
+
+    validator.anecdote.description:
+        class: AppBundle\Validator\Constraints\AnecdoteDescriptionValidator
+        arguments: ['%anecdote_description_regexp%']
+        tags:
+            - { name: validator.constraint_validator, alias: validator.anecdote.description }
